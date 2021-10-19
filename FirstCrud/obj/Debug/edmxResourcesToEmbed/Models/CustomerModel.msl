@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FirstCrudModelStoreContainer" CdmEntityContainer="CustomerEntities">
+    <EntitySetMapping Name="Customer">
+      <EntityTypeMapping TypeName="FirstCrudModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_viewAllCustomer" FunctionName="FirstCrudModel.Store.sp_viewAllCustomer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FirstCrudModel.sp_viewAllCustomer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_insertupdate_customer" FunctionName="FirstCrudModel.Store.sp_insertupdate_customer" />
+    <FunctionImportMapping FunctionImportName="sp_customerDelete" FunctionName="FirstCrudModel.Store.sp_customerDelete" />
+    <FunctionImportMapping FunctionImportName="sp_viewCustomerById" FunctionName="FirstCrudModel.Store.sp_viewCustomerById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FirstCrudModel.sp_viewCustomerById_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
